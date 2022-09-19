@@ -1,0 +1,15 @@
+
+<div mat-dialog-content class="d-flex flex-column gap-3 justify-content-around m-3 mt-5" [formGroup]="formData">
+    <mat-form-field appearance="fill">
+      <mat-label>Employee Name</mat-label>
+      <input matInput [(ngModel)]="data.name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Employee Email</mat-label>
+      <input matInput [(ngModel)]="data.email" formControlName="email">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="d-flex justify-content-around m-3">
+      <button mat-stroked-button color="warn" (click)="onNoClick()" cdkFocusInitial >Cancel</button>
+      <button mat-stroked-button color="primary" [mat-dialog-close]="data"[disabled]="formData.invalid">Save</button>
+  </div>
